@@ -1,4 +1,4 @@
-git clone https://github.com/cheesema/LibAPR
+git clone https://github.com/cheesema/LibAPR.git
 cd LibAPR
 git submodule update --init --recursive
 cd ..
