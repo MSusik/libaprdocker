@@ -1,13 +1,11 @@
-git clone https://github.com/cheesema/LibAPR
-cd LibAPR
-git submodule update --init --recursive
+#!/bin/bash
+
+cd PyLibAPR
+if python -c "import pyApr"; then
+	echo "PyApr has been already installed"
+else
+	python setup.py develop
+fi
 cd ..
-wget https://cmake.org/files/v3.10/cmake-3.10.2-Linux-x86_64.tar.gz
-tar -xzvf cmake-3.10.2-Linux-x86_64.tar.gz
-cd LibAPR
-mkdir build
-cd build
-/srv/cmake-3.10.2-Linux-x86_64/bin/cmake ..
-make
 
-
+jupyter lab --ip=0.0.0.0 --allow-root --port=8888
