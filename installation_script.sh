@@ -4,7 +4,7 @@ cd PyLibAPR
 if python -c "import pyApr"; then
 	echo "PyApr has been already installed"
 else
-	python setup.py develop
+	python setup.py install
 fi
 cd ..
 
