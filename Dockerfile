@@ -10,9 +10,12 @@ RUN apt-get update && apt-get install -y  \
   libhdf5-dev \
   libtiff5-dev \
   libblosc-dev \
-  googletest
+  googletest \
+  python3-pip
+
+ENV HDF5_PLUGIN_PATH /usr/local/hdf5/lib/plugin
 
 ADD installation_script.sh .
 RUN chmod 777 installation_script.sh && ./installation_script.sh
 
-ENTRYPOINT bash
+ENTRYPOINT jupyter lab --ip=0.0.0.0 --allow-root --port=8888
